@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import DecisionTreeRegressor
 from sklearn.metrics import r2_score
 import joblib
 
@@ -42,7 +42,7 @@ X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 # Model
-model = LinearRegression()
+model = DecisionTreeRegressor(random_state=42)
 model.fit(X_train_scaled, y_train)
 
 # Evaluate
